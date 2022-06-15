@@ -63,7 +63,7 @@ decode(IoData, Type, StoreOrLkupFun) ->
 decode(IoData, Type, StoreOrLkupFun, Options) ->
   %% return decoded value as raw erlang term directly
   Lkup = avro_util:ensure_lkup_fun(StoreOrLkupFun),
-  {Value, <<>>} = do_decode(IoData, Type, Lkup, Options),
+  {Value, _} = do_decode(IoData, Type, Lkup, Options),
   Value.
 
 %% @doc decode_stream/4 equivalent with default hook fun.
